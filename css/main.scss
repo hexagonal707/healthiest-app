@@ -1,0 +1,145 @@
+:root {
+
+  --fs-nav-bar-head: clamp(1.1rem, 1.2vw, 1.2rem);
+  --fs-nav-bar-btns: clamp(1.1rem, 1.2vw, 1.2rem);
+  --fs-mast-body: clamp(1.3rem, 3.2vw + 1rem, 3.2rem);
+  --padding-mast-body: clamp(1rem, 1.2vw, 5rem);
+  --width-mast-body: clamp(5.8rem, 95vw, 95rem);
+
+  --height-nav-bar: 10rem;
+  --backdrop-filter-nav-bar: blur(0.5rem);
+  --padding-left-nav-bar: clamp(1.5rem, 5.6vw, 5.6rem);
+  --padding-right-nav-bar: clamp(1.5rem, 5.6vw, 5.6rem);
+  --gap-nav-bar-btns: clamp(1.5rem, 5.6vw, 5.6rem);
+
+
+
+}
+
+@media (max-width: 40em) {
+
+  :root {
+
+    --fs-nav-bar-head: 0.9rem;
+    --fs-nav-bar-btns: 0.9rem;
+    --fs-mast-body: clamp(0.5rem, 6.2vw, 6.2rem);
+    --padding-mast-body: clamp(1.8rem, 5vw, 5rem);
+
+    --height-nav-bar: 4rem;
+    --top-nav-bar: 1.4rem;
+    --left-nav-bar: 1.4rem;
+    --right-nav-bar: 1.4rem;
+    --background-color-nav-bar: #1a19197a;
+    --box-shadow-nav-bar: 0 0.2rem 0.5rem 0.1rem #00000066;
+    --backdrop-filter-nav-bar: blur(0.5rem);
+    --padding-left-nav-bar: 1.0rem;
+    --padding-right-nav-bar: 1.3rem;
+    --gap-nav-bar-btns: 1.3rem;
+
+
+  }
+}
+
+
+@media (max-height: 45em) {
+
+  :root {
+
+    --fs-mast-body: clamp(0.5vw + 1.2rem, 3.5vw, 6.2rem);
+    --height-nav-bar: 4rem;
+    --top-nav-bar: 1.4rem;
+    --left-nav-bar: 1.4rem;
+    --right-nav-bar: 1.4rem;
+    --fs-nav-bar-head: 0.9rem;
+    --fs-nav-bar-btns: 0.9rem;
+
+  }
+}
+
+
+* {
+  font-family: Inter, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  touch-action: pan-y;
+  transition: 150ms ease-in-out;
+  -webkit-transition: 150ms ease-in-out;
+  -moz-transition: 150ms ease-in-out;
+  -ms-transition: 150ms ease-in-out;
+  -o-transition: 150ms ease-in-out;
+
+}
+
+@media (max-width: 40em), (max-height: 45em) {
+
+  * {
+
+    transition: 150ms ease-in-out;
+    -webkit-transition: 150ms ease-in-out;
+    -moz-transition: 150ms ease-in-out;
+    -ms-transition: 150ms ease-in-out;
+    -o-transition: 150ms ease-in-out;
+
+  }
+
+
+}
+
+
+html {
+  line-height: 1.5;
+  user-select: none;
+  -webkit-text-size-adjust: 100%;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.nav-bar {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #4230DD;
+  height: var(--height-nav-bar);
+  z-index: 1;
+  text-align: center;
+  padding-left: var(--padding-left-nav-bar);
+  padding-right: var(--padding-right-nav-bar);
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  background: white;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.nav-bar-container {
+  display: flex;
+  position: relative;
+  gap: 8rem;
+}
+
+.nav-bar-links {
+  color: #CAF4E0;
+  font-size: small;
+  font-weight: bold;
+  list-style-type: none;
+  display: inline-flex;
+  gap: 3rem;
+  align-items: center;
+
+}
+
+.download-button {
+  color: #4230DD;
+  background: #CAF4E0;
+  padding: 1.2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0.4rem 0.4rem 0.1rem 0.02rem #000000; ;
+}
