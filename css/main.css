@@ -169,8 +169,14 @@ html {
   grid-row-gap: 1rem;
 }
 
+.store-links-flexbox {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+
 .appstore {
-  margin-right: 0.5rem;
   position: relative;
   z-index: 1;
   width: 7rem;
@@ -194,6 +200,21 @@ html {
 .appstore:hover {
   transform: scale(110%);
   transition: 150ms ease-in-out;
+}
+
+.how-it-works-button {
+  position: relative;
+  font-weight: bold;
+  display: inline-block;
+  color: #CAF4E0;
+  z-index: 1;
+  width: 7.8rem;
+  height: auto;
+  transition: 150ms ease-in-out;
+}
+
+.how-it-works-button:hover {
+  color: white;
 }
 
 .main-container {
@@ -222,6 +243,7 @@ html {
   border-radius: 2rem;
   padding: 1rem 2rem;
   cursor: pointer;
+  width: 8rem;
 }
 
 .more-button:hover {
@@ -236,6 +258,7 @@ html {
   border-radius: 2rem;
   padding: 1rem 2rem;
   cursor: pointer;
+  width: 8rem;
 }
 
 .less-button:hover {
@@ -272,6 +295,44 @@ html {
   transform: translate(0.4rem, 0.4rem);
   transition: 150ms ease-in-out;
   scale: 102%;
+}
+
+.how-it-works-section {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-top: 6rem;
+}
+
+.how-it-works-heading {
+  font-size: xxx-large;
+  font-weight: bold;
+}
+
+.how-it-works-container-1 {
+  margin: 4rem;
+  border-radius: 2rem;
+  background-color: rgba(66, 48, 221, 0.1254901961);
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 4rem;
+  padding: 4rem;
+}
+
+.how-it-works-container-1 > img {
+  width: 65%;
+}
+
+.how-it-works-container-1-main-text {
+  font-size: xx-large;
+  font-weight: bold;
+  padding-bottom: 4rem;
+}
+
+.how-it-works-container-1-sub-text {
+  font-size: large;
+  font-weight: normal;
 }
 
 /*# sourceMappingURL=main.css.map */
