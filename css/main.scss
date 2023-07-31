@@ -62,17 +62,17 @@
   padding: 0;
   box-sizing: border-box;
   touch-action: pan-y;
-  transition: 150ms ease-in-out;
+  /*transition: 150ms ease-in-out;
   -webkit-transition: 150ms ease-in-out;
   -moz-transition: 150ms ease-in-out;
   -ms-transition: 150ms ease-in-out;
-  -o-transition: 150ms ease-in-out;
+  -o-transition: 150ms ease-in-out;*/
 
 }
 
 @media (max-width: 40em), (max-height: 45em) {
 
-  * {
+  /** {
 
     transition: 150ms ease-in-out;
     -webkit-transition: 150ms ease-in-out;
@@ -80,7 +80,7 @@
     -ms-transition: 150ms ease-in-out;
     -o-transition: 150ms ease-in-out;
 
-  }
+  }*/
 
 
 }
@@ -103,7 +103,7 @@ html {
   right: 0;
   background-color: #4230DDEE;
   height: var(--height-nav-bar);
-  z-index: 1;
+  z-index: 2;
   text-align: center;
   padding-left: var(--padding-left-nav-bar);
   padding-right: var(--padding-right-nav-bar);
@@ -112,9 +112,9 @@ html {
 }
 
 .logo {
-  background: white;
+  background-color: white;
   padding: 1rem;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
 }
 
 .nav-bar-container {
@@ -140,6 +140,7 @@ html {
   background: #CAF4E0;
   padding: 1.2rem 2.0rem;
   border-radius: 0.5rem;
+  transition: 150ms ease-in-out;
 
 }
 
@@ -151,17 +152,18 @@ html {
 
 .download-button:hover {
   transform: translate(0.4rem, 0.4rem);
+  transition: 150ms ease-in-out;
 }
 
-.home-image{
+.home-image {
   display: flex;
-  position: absolute;
+  position: relative;
   height: auto;
   width: 100vw;
   transform: translateY(-15%);
 }
 
-.home-main-text{
+.home-main-text {
   align-items: center;
   z-index: 1;
   color: white;
@@ -170,7 +172,8 @@ html {
   font-size: 3.6rem;
   width: 30%;
 }
-.home-sub-text{
+
+.home-sub-text {
   align-items: center;
   z-index: 1;
   line-height: 2.0rem;
@@ -182,11 +185,79 @@ html {
 }
 
 
-.home-text-grid-container{
+.home-text-grid-container {
   position: absolute;
   display: grid;
   top: 25%;
   left: 15%;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-row-gap: 1rem;
 }
+
+.appstore {
+  margin-right: 0.5rem;
+  position: relative;
+  z-index: 1;
+  width: 7rem;
+  height: auto;
+  transition: 150ms ease-in-out;
+}
+
+.playstore {
+  position: relative;
+  z-index: 1;
+  width: 7.8rem;
+  height: auto;
+  transition: 150ms ease-in-out;
+}
+
+.playstore:hover {
+  transform: scale(110%);
+  transition: 150ms ease-in-out;
+}
+
+.appstore:hover {
+  transform: scale(110%);
+  transition: 150ms ease-in-out;
+}
+
+.main-container {
+  box-shadow: 0 0 2rem 0.01rem #00000044;
+  margin: 1% 12%;
+  border-radius: 0.4rem;
+  position: relative;
+}
+
+.food-chain-grid-container {
+  grid-template-columns: repeat(5, 1fr);
+  justify-items: center;
+  display: grid;
+  padding: 4rem 6rem 0 6rem;
+}
+
+.food-chain-grid-container > img {
+  width: 100%;
+}
+
+.more-button {
+  margin: 2rem;
+  grid-column: 1 / 6;
+  border: 0.01rem #C8C8FFFF solid;
+  border-radius: 2rem;
+  padding: 1rem 2rem;
+  cursor: pointer;
+}
+
+.less-button {
+  margin: 2rem;
+  grid-column: 1 / 6;
+  border: 0.01rem #C8C8FFFF solid;
+  border-radius: 2rem;
+  padding: 1rem 2rem;
+  cursor: pointer;
+}
+
+
+
+
+
