@@ -1,16 +1,28 @@
 :root {
 
-  --fs-nav-bar-head: clamp(1.1rem, 1.2vw, 1.2rem);
-  --fs-nav-bar-btns: clamp(1.1rem, 1.2vw, 1.2rem);
-  --fs-mast-body: clamp(1.3rem, 3.2vw + 1rem, 3.2rem);
-  --padding-mast-body: clamp(1rem, 1.2vw, 5rem);
-  --width-mast-body: clamp(5.8rem, 95vw, 95rem);
+
 
   --height-nav-bar: 10rem;
-  --backdrop-filter-nav-bar: blur(0.5rem);
   --padding-left-nav-bar: clamp(1.5rem, 5.6vw, 5.6rem);
   --padding-right-nav-bar: clamp(1.5rem, 5.6vw, 5.6rem);
-  --gap-nav-bar-btns: clamp(1.5rem, 5.6vw, 5.6rem);
+  --display-nav-bar-links: inline-flex;
+  --display-download-button-mob:none;
+  --gap-nav-bar-container: 8rem;
+
+  --scale-download-button: 100%;
+  --box-shadow-download-button-shadow: 0.4rem 0.4rem 0.1rem 0.02rem #000000FF;
+
+  --transform-home-image: translate(0%, -15%);
+  --height-home-image: auto;
+  --width-home-image:100%;
+  --scale-home-image: 100%;
+
+  --scale-home-main-text: 100%;
+  --width-home-main-text: 30%;
+  --fs-home-main-text: 3.6rem;
+
+  --margin-main-container: 1% 12%;
+
 
 
 }
@@ -19,21 +31,29 @@
 
   :root {
 
-    --fs-nav-bar-head: 0.9rem;
-    --fs-nav-bar-btns: 0.9rem;
-    --fs-mast-body: clamp(0.5rem, 6.2vw, 6.2rem);
-    --padding-mast-body: clamp(1.8rem, 5vw, 5rem);
 
-    --height-nav-bar: 4rem;
-    --top-nav-bar: 1.4rem;
-    --left-nav-bar: 1.4rem;
-    --right-nav-bar: 1.4rem;
-    --background-color-nav-bar: #1a19197a;
-    --box-shadow-nav-bar: 0 0.2rem 0.5rem 0.1rem #00000066;
-    --backdrop-filter-nav-bar: blur(0.5rem);
+
+
+    --height-nav-bar: 8rem;
     --padding-left-nav-bar: 1.0rem;
     --padding-right-nav-bar: 1.3rem;
-    --gap-nav-bar-btns: 1.3rem;
+    --display-nav-bar-links: none;
+    --display-download-button-mob:block;
+    --gap-nav-bar-container: 2rem;
+
+    --scale-download-button: 70%;
+    --box-shadow-download-button-shadow:0.4rem 0.4rem 0.1rem 0.02rem #00000000;
+
+    --transform-home-image: translate(-50%, 50%);
+    --height-home-image: 40vh;
+    --width-home-image:auto;
+    --scale-home-image: 250%;
+
+    --fs-home-main-text: 1rem;
+    --scale-home-main-text: 100%;
+    --width-home-main-text: 100%;
+
+    --margin-main-container: 0% 0%;
 
 
   }
@@ -58,6 +78,7 @@
 
 * {
   font-family: Inter, sans-serif;
+
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -120,7 +141,7 @@ html {
 .nav-bar-container {
   display: flex;
   position: relative;
-  gap: 8rem;
+  gap: var(--gap-nav-bar-container);
 
 }
 
@@ -129,26 +150,26 @@ html {
   font-size: small;
   font-weight: bold;
   list-style-type: none;
-  display: inline-flex;
+  display: var(--display-nav-bar-links);
   gap: 3rem;
   align-items: center;
 }
 
 .download-button {
+  display: block !important;
   color: #4230DD;
   font-weight: bold;
   background: #CAF4E0;
   padding: 1.2rem 2.0rem;
   border-radius: 0.5rem;
   transition: 150ms ease-in-out;
-
+  scale: var(--scale-download-button);
 }
 
 .download-button-shadow {
   border-radius: 0.5rem;
-  box-shadow: 0.4rem 0.4rem 0.1rem 0.02rem #000000;
+  box-shadow: var(--box-shadow-download-button-shadow);
 }
-
 
 .download-button:hover {
   transform: translate(0.4rem, 0.4rem);
@@ -156,22 +177,50 @@ html {
   scale: 102%;
 }
 
-.home-image {
+.download-button-mob {
+  display: var(--display-download-button-mob);
+  color: #4230DD;
+  font-weight: bold;
+  background: #CAF4E0;
+  padding: 1.2rem 2.0rem;
+  border-radius: 0.5rem;
+  transition: 150ms ease-in-out;
+  scale: var(--scale-download-button);
+  align-self: center;
+
+}
+
+.home-section-flexbox{
   display: flex;
   position: relative;
-  height: auto;
-  width: 100%;
-  transform: translateY(-15%);
+}
+
+.home-text-gridbox {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: auto;
+  grid-row-gap: 1rem;
+  position: absolute;
+  left: 10%;
+  top: 20%;
+  scale: 100%;
+}
+
+.home-image {
+  display: inline-flex;
+  position:relative;
+  height: var(--height-home-image);
+  width: var(--width-home-image);
+  transform: var(--transform-home-image);
 }
 
 .home-main-text {
-  align-items: center;
-  z-index: 1;
+  position: relative;
   color: white;
   text-align: left;
   font-weight: 900;
   font-size: 3.6rem;
-  width: 30%;
+  width: 50%;
 }
 
 .home-sub-text {
@@ -183,16 +232,6 @@ html {
   font-weight: 500;
   font-size: 1.4rem;
   width: 30%;
-}
-
-
-.home-text-grid-container {
-  position: absolute;
-  display: grid;
-  top: 25%;
-  left: 15%;
-  grid-template-columns: 1fr;
-  grid-row-gap: 1rem;
 }
 
 .store-links-flexbox {
@@ -245,7 +284,7 @@ html {
 
 .main-container {
   box-shadow: 0 0 2rem 0.01rem #00000044;
-  margin: 1% 12%;
+  margin: var(--margin-main-container);
   border-radius: 0.4rem;
   position: relative;
   padding: 0 0 3rem 0;
