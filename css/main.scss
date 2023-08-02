@@ -1,7 +1,5 @@
 :root {
 
-
-
   --height-nav-bar: 10rem;
   --padding-left-nav-bar: clamp(1.5rem, 5.6vw, 5.6rem);
   --padding-right-nav-bar: clamp(1.5rem, 5.6vw, 5.6rem);
@@ -116,6 +114,8 @@ html {
   -ms-user-select: none;
 }
 
+
+
 .nav-bar {
   display: flex;
   position: fixed;
@@ -154,6 +154,12 @@ html {
   gap: 3rem;
   align-items: center;
 }
+
+.nav-bar-links > li:hover{
+  color: #FFFFFFFF;
+  cursor: pointer;
+}
+
 
 .download-button {
   display: block !important;

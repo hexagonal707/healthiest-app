@@ -119,6 +119,11 @@ html {
   align-items: center;
 }
 
+.nav-bar-links > li:hover {
+  color: white;
+  cursor: pointer;
+}
+
 .download-button {
   display: block !important;
   color: #4230DD;
