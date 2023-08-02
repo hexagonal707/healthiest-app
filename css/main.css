@@ -3,13 +3,13 @@
   --padding-left-nav-bar: clamp(1.5rem, 5.6vw, 5.6rem);
   --padding-right-nav-bar: clamp(1.5rem, 5.6vw, 5.6rem);
   --display-nav-bar-links: inline-flex;
-  --display-download-button-mob:none;
+  --display-download-button-mob: none;
   --gap-nav-bar-container: 8rem;
   --scale-download-button: 100%;
   --box-shadow-download-button-shadow: 0.4rem 0.4rem 0.1rem 0.02rem #000000FF;
   --transform-home-image: translate(0%, -15%);
   --height-home-image: auto;
-  --width-home-image:100%;
+  --width-home-image: 100%;
   --scale-home-image: 100%;
   --scale-home-main-text: 100%;
   --width-home-main-text: 30%;
@@ -23,13 +23,13 @@
     --padding-left-nav-bar: 1.0rem;
     --padding-right-nav-bar: 1.3rem;
     --display-nav-bar-links: none;
-    --display-download-button-mob:block;
+    --display-download-button-mob: block;
     --gap-nav-bar-container: 2rem;
     --scale-download-button: 70%;
-    --box-shadow-download-button-shadow:0.4rem 0.4rem 0.1rem 0.02rem #00000000;
+    --box-shadow-download-button-shadow: 0.4rem 0.4rem 0.1rem 0.02rem #00000000;
     --transform-home-image: translate(-50%, 50%);
     --height-home-image: 40vh;
-    --width-home-image:auto;
+    --width-home-image: auto;
     --scale-home-image: 250%;
     --fs-home-main-text: 1rem;
     --scale-home-main-text: 100%;
@@ -121,7 +121,37 @@ html {
 
 .nav-bar-links > li:hover {
   color: white;
-  cursor: pointer;
+}
+
+.nav-bar-links li:hover .about-dropdown-gridbox {
+  display: block;
+}
+
+.about-dropdown-gridbox {
+  position: absolute;
+  display: none;
+  grid-template-rows: 1fr -1fr;
+}
+
+.about-dropdown {
+  display: block;
+  list-style-type: none;
+  box-shadow: 0 0 0.4rem 0.1rem rgba(0, 0, 0, 0.2);
+  border-radius: 0.4rem;
+  padding: 1rem;
+  background-color: #4230dd;
+}
+
+.about-dropdown > li a {
+  display: block;
+  text-align: left;
+  color: #CAF4E0;
+  text-decoration: none;
+  margin: 2rem 1rem;
+}
+
+.about-dropdown li a:hover {
+  color: white;
 }
 
 .download-button {
