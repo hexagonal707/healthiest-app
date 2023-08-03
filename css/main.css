@@ -1,5 +1,8 @@
 :root {
   --height-nav-bar: 10rem;
+  --top-nav-bar: 0;
+  --left-nav-bar: 0;
+  --right-nav-bar:0;
   --padding-left-nav-bar: clamp(1.5rem, 5.6vw, 5.6rem);
   --padding-right-nav-bar: clamp(1.5rem, 5.6vw, 5.6rem);
   --display-nav-bar-links: inline-flex;
@@ -20,11 +23,14 @@
 @media (max-width: 40em) {
   :root {
     --height-nav-bar: 8rem;
-    --padding-left-nav-bar: 1.0rem;
-    --padding-right-nav-bar: 1.3rem;
+    --top-nav-bar: none;
+    --left-nav-bar: none;
+    --right-nav-bar: none;
+    --padding-left-nav-bar: 0rem;
+    --padding-right-nav-bar: 0rem;
     --display-nav-bar-links: none;
     --display-download-button-mob: block;
-    --gap-nav-bar-container: 2rem;
+    --gap-nav-bar-container: 0rem;
     --scale-download-button: 70%;
     --box-shadow-download-button-shadow: 0.4rem 0.4rem 0.1rem 0.02rem #00000000;
     --transform-home-image: translate(-50%, 50%);
@@ -84,9 +90,9 @@ html {
 .nav-bar {
   display: flex;
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: var(--top-nav-bar);
+  left: var(--left-nav-bar);
+  right: var(--right-nav-bar);
   background-color: rgba(66, 48, 221, 0.9333333333);
   height: var(--height-nav-bar);
   z-index: 2;
